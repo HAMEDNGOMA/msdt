@@ -1,19 +1,22 @@
-import 'package:json_annotation/json_annotation.dart';
-
-part 'category.g.dart';
-
-@JsonSerializable()
 class Category {
-  @JsonKey(name: 'id', defaultValue: null)
   final int? id;
-
-  @JsonKey(name: 'name', defaultValue: '')
   final String name;
 
   const Category({this.id, this.name = ''});
 
-  factory Category.fromJson(Map<String, dynamic> json) =>
-      _$CategoryFromJson(json);
+  // Custom fromJson method
+  factory Category.fromJson(Map<String, dynamic> json) {
+    return Category(
+      id: json['id'] as int?,
+      name: json['name'] as String? ?? '',
+    );
+  }
 
-  Map<String, dynamic> toJson() => _$CategoryToJson(this);
+  // Custom toJson method
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+    };
+  }
 }

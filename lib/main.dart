@@ -1,12 +1,10 @@
 import 'package:dart_mediatr/dart_mediatr.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
 import 'package:msdt/bloc.dart';
 
+@MediatorInit()
 void main() {
-  setupLocator();
-
   runApp(const MyApp());
 }
 
@@ -16,8 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          CategoriesBloc(GetIt.instance<Mediator>())..add(LoadCategories()),
+      create: (context) => CategoriesBloc()..add(LoadCategories()),
       child: const MaterialApp(
         home: CategoriesScreen(),
       ),

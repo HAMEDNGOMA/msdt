@@ -1,17 +1,25 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'package:msdt/models/category.dart';
 
-part 'getCategoriesQueryResponse.g.dart';
-
-@JsonSerializable()
 class GetCategoriesQueryResponse {
-  @JsonKey(name: 'data', defaultValue: [])
   final List<Category> categories;
 
-  GetCategoriesQueryResponse(this.categories);
+  GetCategoriesQueryResponse({List<Category>? categories})
+      : categories = categories ?? [];
 
-  factory GetCategoriesQueryResponse.fromJson(Map<String, dynamic> json) =>
-      _$GetCategoriesQueryResponseFromJson(json);
+  // Custom fromJson method
+  factory GetCategoriesQueryResponse.fromJson(Map<String, dynamic> json) {
+    var categoryList = json['data'] as List<dynamic>? ?? [];
+    List<Category> categories = categoryList
+        .map((item) => Category.fromJson(item as Map<String, dynamic>))
+        .toList();
 
-  Map<String, dynamic> toJson() => _$GetCategoriesQueryResponseToJson(this);
+    return GetCategoriesQueryResponse(categories: categories);
+  }
+
+  // Custom toJson method
+  Map<String, dynamic> toJson() {
+    return {
+      'data': categories.map((category) => category.toJson()).toList(),
+    };
+  }
 }
