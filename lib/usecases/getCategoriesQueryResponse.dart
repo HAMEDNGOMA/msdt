@@ -1,4 +1,5 @@
-import 'package:msdt/models/category.dart';
+
+import 'models/category.dart';
 
 class GetCategoriesQueryResponse {
   final List<Category> categories;

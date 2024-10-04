@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:msdt/bloc.dart';
 
+import './main.mediator.dart';
+
 @MediatorInit()
 void main() {
+  registerAllHandlers();
   runApp(const MyApp());
 }
 

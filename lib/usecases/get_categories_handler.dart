@@ -2,7 +2,8 @@ import 'dart:convert';
 
 import 'package:dart_mediatr/dart_mediatr.dart';
 import 'package:http/http.dart' as http;
-import 'package:msdt/models/getCategoriesQueryResponse.dart';
+
+import 'getCategoriesQueryResponse.dart';
 import 'get_categories_query.dart';
 
 @QueryHandler()

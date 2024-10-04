@@ -1,8 +1,8 @@
 import 'package:dart_mediatr/dart_mediatr.dart';
-import 'package:msdt/models/getCategoriesQueryResponse.dart';
-import 'get_categories_query.dart';
 import 'package:bloc/bloc.dart';
-import 'models/category.dart';
+import 'package:msdt/usecases/getCategoriesQueryResponse.dart';
+import 'package:msdt/usecases/get_categories_query.dart';
+import 'package:msdt/usecases/models/category.dart';
 
 // Bloc Event
 abstract class CategoriesEvent {}
