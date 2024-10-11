@@ -186,10 +186,10 @@ packages:
     dependency: "direct main"
     description:
       name: dart_mediatr
-      sha256: f8e6d89e2d48729a80be71852cc62dadbcad8331f79d4fab1b130a4e652d0649
+      sha256: "9546305526dfc528912ce9b66ff5e9a6a37d3a7eb8e965f4e9a1f1f603783297"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.3"
+    version: "1.0.5"
   dart_style:
     dependency: transitive
     description:
